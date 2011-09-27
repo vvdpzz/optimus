@@ -8,6 +8,8 @@ Optimus::Application.routes.draw do
   get "sessions/create"
 
   get "sessions/destroy"
+  
+  resources :questions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +60,7 @@ Optimus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'questions#paid'
 
   # See how all your routes lay out with "rake routes"
 
