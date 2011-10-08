@@ -32,5 +32,5 @@ Optimus::Application.routes.draw do
     end
   end
   
-  root :to => 'questions#paid'
+  root :to => 'application#index'
 end
