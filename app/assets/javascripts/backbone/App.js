@@ -26,21 +26,17 @@ var App = {
   FREE_QUESTION = "freeQuestion",
   PAID_QUESTION = "paidQuestion",
   WATCH_QUESTION = "watchQuestion",
-  MAIN = ".main-content",
+  MAIN = "#main-content",
+  DASHBOARD = "#dashboard",
+  DETAILS_PANE_OUTER = "#details-pane-outer",
+  DETAILS_PANE = ".details-pane",
+  PANE_COMPONENTS = ".pane-components",
   PAGE_CONTAINER = "#page-container",
   
   BASE_URL = "http://mayday.fm:3000";
   
 oBody = $("body");
 oDoc = $("#doc");
-oNav = $("#nav");
-oNavTabs = oNav.find("li");
-oNavHome = $("#nav-home");
-oNavQuesion = $("#nav-question");
-oNavDynamic = $("#nav-dynamic");
-oNavInbox = $("#nav-inbox");
-oPageOuter = $(PAGE_OUTER);
-oPageContainer = $(PAGE_CONTAINER);
 lxhd = {};
 
 function mURL(a) {

@@ -14,7 +14,7 @@
       oBody.append(App.Pages.Paid.render().el);
       document.title = "paid questions";
       oNavTabs.removeClass(CLASS_ACTIVE);
-      oNavQestion.addClass(CLASS_ACTIVE);
+      $("#nav-question").addClass(CLASS_ACTIVE);
 		} else {
 			location.hash = "#!/accounts/login";
 		}
@@ -27,6 +27,6 @@
     oBody.append(App.Pages.Free.render().el);
     document.title = "paid questions";
     oNavTabs.removeClass(CLASS_ACTIVE);
-    oNavInbox.addClass(CLASS_ACTIVE);
+    $("#nav-question").addClass(CLASS_ACTIVE);
 	}
 });
