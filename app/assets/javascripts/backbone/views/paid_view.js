@@ -13,7 +13,7 @@ App.Views.Paid = Backbone.View.extend({
   render: function(){
     $(this.el).attr("class", "route-"+App.Pages.route+" container");
     $(PAGE_CONTAINER).attr("class", App.Pages.route+"-container").siblings().not(".index-container").remove();
-    $(PAGE_CONTAINER).find(MAIN).length ? (this.$(MAIN).html(""),this.$(DASHBOARD).html(""), this.$(DETAILS_PANE).html("").remove(".opened"),this.$(DETAILS_PANE_OUTER).css("height", "0")) : $(PAGE_CONTAINER).html(this.template);
+    $(PAGE_CONTAINER).find(MAIN).length ? (this.$(MAIN).html(""),this.$(DASHBOARD).html(""), this.$(DETAILS_PANE).hide(),this.$(DETAILS_PANE_OUTER).css("height", "0")) : $(PAGE_CONTAINER).html(this.template);
 		$(MAIN).append(Mustache.to_html(this.tabs_template, {paid: CLASS_ACTIVE}));
     a = this;
    	this.questions.length ? this.loadMain(): this.questions.fetch({

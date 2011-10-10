@@ -5,19 +5,26 @@ App.Views.Details = Backbone.View.extend({
        "click .close": "close"
   },
   initialize: function () {
-      _.bindAll(this, "render", "open", "close", "loadQuestionDetail")
+      _.bindAll(this, "render", "open", "close", "loadQuestionDetail", "test")
   },
   render: function () {
       $(this.el).html(this.template);
       return this
   },
+	test: function(){alert(123)},
 	loadQuestionDetail: function () {
-		
+		if (!this.$(".question-item").length) {
+        var a = new App.Views.QuestionItem({
+            type: "detail",
+            model: this.options.question_detail
+        });
+    }
+    this.$(".pane-components").prepend(a.render().el)		
 	},
   open: function () {
       $(".main-content .opened");
       $(this.el).css("height", $(window).height() - 66 + "px").show().animate({
-          left: "830px"
+          left: "550px"
       }, 200).addClass("opened");
       this.$(".pane-components").css({
           height: $(window).height() - 102 + "px"

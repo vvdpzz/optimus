@@ -15,7 +15,7 @@ App.Views.Questions = Backbone.View.extend({
 	},
 	
   addOne: function (a) {
-    if (!this.$("[data-item-id=" + a.id + "]").length) $(this.el).append((new App.Views.QuestionItem({ model: a })).render().el);
+    if (!this.$("[data-item-id=" + a.id + "]").length) $(this.el).append((new App.Views.QuestionItem({type: "item", model: a })).render().el);
   },
 
    addAll: function () {
