@@ -1,14 +1,14 @@
 /*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require bootstrap
- *= require_tree . 
+* This is a manifest file that'll automatically include all the stylesheets available in this directory
+* and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+* the top of the compiled file, but it's generally better to create a new file per style scope.
+*= require_self
+*= require bootstrap
+*= require_tree . 
 */
 
 #doc{
-  padding:30px 0;
+	padding:30px 0;
 }
 #doc ::-webkit-scrollbar {
 	width: 9px;
@@ -25,37 +25,37 @@
 	border-bottom-left-radius: 8px 8px;
 }
 .question-item{
-  padding:10px 0;
-  clear: both;
-  display: block;
-  outline: none;
-  font-size:14px;
-  color:#444;
-  border-bottom: 1px solid #EBEBEB;
+	padding:10px 0;
+	clear: both;
+	display: block;
+	outline: none;
+	font-size:14px;
+	color:#444;
+	border-bottom: 1px solid #EBEBEB;
 }
 .question-item .stats{
-  float:left;
-  width:32px;
-  height:48px;
-/*  border:1px solid #ebebeb;*/
+	float:left;
+	width:32px;
+	height:48px;
+	/*  border:1px solid #ebebeb;*/
 }
 .question-item .content{
-  margin-left: 42px;
-  min-height: 48px;
+	margin-left: 42px;
+	min-height: 48px;
 }
 .question-item .text{
-  font-family: Arial,"Helvetica Neue",sans-serif;
-  line-height: 19px;
-  word-wrap: break-word;
+	font-family: Arial,"Helvetica Neue",sans-serif;
+	line-height: 19px;
+	word-wrap: break-word;
 }
 .question-item .timestamp{
-  color:#999;
-  font-size:11px;
+	color:#999;
+	font-size:11px;
 }
 .item-row {
-  display: block;
-  position: relative;
-  line-height: 15px;
+	display: block;
+	position: relative;
+	line-height: 15px;
 }
 
 a.buttonLink	{
@@ -155,18 +155,129 @@ a.buttonLink:hover{
 
 
 .question_info_main{
-		position:relative;
-		width: 350px;
-		min-height: 340px;
-		line-height:15px;
-		padding: 25px 20px 50px;
-		margin: 0 auto;
-	}
-	.question_info_title{
-		font-size: 18px;
-	}
+	position:relative;
+	width: 350px;
+	min-height: 340px;
+	line-height:15px;
+	padding: 25px 20px 50px;
+	margin: 0 auto;
+}
+.question_info_title{
+	font-size: 18px;
+}
+
+#question_tab{
+	position: absolute;
+	display: none;
+	top:1px;
+	left:1px;
+	padding: 10px;
+	border: none;
+	background: gray;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border-radius: 10px;
+	width: 420px;
+	z-index: 99;
+}
+#question_tabHeader{
+	position:absoulute;
+	top:0px;
+	left:0px;
+	width:390px;
+	height:20px;
+} 
+#question_tabHeader p{
+	font:17px/22px 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+	font-weight:25em;
+	padding:5px 0 0 -5px;
+	margin:0;
+	word-wrap:break-word;
+	cursor: pointer;
+	font-weight: 700;
+	position: relative;
+	_zoom: 1;
+	color: #fff;
+	height: 33px;
+	font-size: 14px;
+	text-shadow: 0 -1px 0 #0B3F61;
+}
+.question_tabContent{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background: white;
+	padding: 20px 10px 0 10px;
+}
+#question_info{
+	border: none;
+	color: #999;
+	min-height: 66px;
+	width: 100%;
+	font-weight: normal;
+	padding: 0;
+	margin: 0;
+	resize:none;
+}
+#ask_question{
+	padding: 4px 10px;
+}
 
 
+.question_control{
+	padding: 10px 0;
+	text-align: right;
+}
+
+.question_tabInfo{
+	-webkit-box-shadow:1px 1px #ddd;
+	-moz-box-shadow:1px 1px #ddd;
+	box-shadow: 1px 1px #ddd;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: white;
+	border: 1px solid #CCC!important;
+	padding: 7px 5px!important;
+	color: #333;
+}
+.question_tabMoney{
+	margin:5px 0 0;
+}
+.question_askInterest{
+	width:50px;
+}
+.register{
+	width: 160px;
+	height:46px;
+	line-height:46px;
+	color:white;
+	font-size:30px;
+	background-color: #339bb9;
+	background-repeat: repeat-x;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#5bc0de), to(#339bb9));
+	background-image: -moz-linear-gradient(top, #5bc0de, #339bb9);
+	background-image: -ms-linear-gradient(top, #5bc0de, #339bb9);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5bc0de), color-stop(100%, #339bb9));
+	background-image: -webkit-linear-gradient(top, #5bc0de, #339bb9);
+	background-image: -o-linear-gradient(top, #5bc0de, #339bb9);
+	background-image: linear-gradient(top, #5bc0de, #339bb9);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#339bb9', GradientType=0);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	border-color: #339bb9 #339bb9 #22697d;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	display: inline-block;
+	text-decoration:none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding: 3px 5px 4px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+}
 
 
 

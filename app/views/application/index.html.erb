@@ -11,6 +11,7 @@
             <li id="nav-inbox"><a href="#">通知</a></li>
           </ul>
           <ul class="nav secondary-nav">
+            <li><a id="create_question" href="javascript:create()" >+</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle">feipinghuang</a>
               <ul class="dropdown-menu">
@@ -32,3 +33,13 @@
     <div id="footer">
     </div>
 </div>
+<script type="text/javascript" charset="utf-8">
+  function create(){
+    App.Widgets.Ask||(App.Widgets.Ask = new App.Views.Ask);
+    if($(App.Widgets.Ask.el).is(":visible")){
+      App.Widgets.Ask.close();
+    }else{
+      App.Widgets.Ask.open();
+    }
+  }
+</script>
