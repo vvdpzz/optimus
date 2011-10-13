@@ -3,7 +3,7 @@ App.Views.Ask = Backbone.View.extend({
 	template: JST["backbone/templates/ask"].call(this),
 	events: {
 		"click #question_submit" : "create_question",
-		"click #close" : "test"
+		"click .close" : "close"
 	},
 	
 	initialize: function(){
@@ -33,8 +33,9 @@ App.Views.Ask = Backbone.View.extend({
 	create_question: function(){
 		var title=this.$("#question_info").val(),
 				content=this.$("#question_info").val(),
-				credit=this.$("#question_money").val(),
-				money=this.$("#question_credit").val();
+				money=this.$("#question_money").val(),
+				credit=this.$("#question_credit").val(),
+				c = this;
 		$.ajax({
 			url: mURL("/questions"),
 			type: 'POST',
@@ -47,21 +48,20 @@ App.Views.Ask = Backbone.View.extend({
 				"auth_token":TK
 			},
 			success: function(a) {
-				alert("success:"+a)
+				c.close();
 		  },
 			error: function(a){
 				alert("faild:"+a)
-			}
+			}	
 		});
 	},
 	open: function(){
 		$(this.el).css({  
 		  "top": (document.documentElement.clientHeight-$(this.el).height())/2+$(document).scrollTop(),   
 		  "left": (document.documentElement.clientWidth-$(this.el).width())/2
-		}).show()
+		}).fadeIn()
 	},
 	close: function(){
-		$(this.el).hide()
-	},
-	test: function(){alert(23123)}
+		$(this.el).fadeOut()
+	}
 });

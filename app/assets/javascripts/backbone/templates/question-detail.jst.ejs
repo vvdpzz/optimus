@@ -1,19 +1,27 @@
 <div class="question_info_main">
-		<h2 class="question_info_title">{{title}}</h2>
-		<a href="javascrip:;" class="question_info_more">更多</a>
-		<img src="" class="question_info_asker"/>
-	<div class="">
-		<div class="question_info_content">
-		{{content}}
-		</div>
-		<div class="question_info_time">
-		{{created_at}}
-		</div>
-		<div class="question_info_money">
-       ¥{{money}}
-		</div>
-		<div class="question_info_credit">
-			#{{credit}}
-		</div>
-	</div>
-	</div>
+
+  <div class="question_info_title alert-message block-message info">
+    <h2 class=" ">{{title}}</h2>
+    <a href="javascrip:;" class="question_info_more">更多</a>
+  </div>
+  <div class="question_info_return">
+    <span class="label warning">
+      ¥{{money}}
+    </span>
+    <span class="label success">
+      #{{credit}}
+    </span>
+  </div>
+
+  <div class="">
+    <div class="question_info_content alert-message block-message info">
+        <a class="question_info_asker"><img src="../assets/rails.png" /></a>
+        <p>{{content}}</p>
+       <div class="question_info_time  alert-message block-message success">
+          {{created_at}}
+        </div>
+    </div>
+   
+
+  </div>
+</div>

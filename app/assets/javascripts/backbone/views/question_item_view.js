@@ -21,13 +21,12 @@ App.Views.QuestionItem = Backbone.View.extend({
 	},
 	
 	render: function(){
-		var a = this.type,
-				model = this.model.toJSON();
+		var a = this.type,model = this.model.toJSON();
 		$(this.el).html(Mustache.to_html(this[this.config[a].template], model)).attr({"data-item-id": model.id})
 		return this
 	},
-	
 	toggleDetails: function(a){
+
 	 	if (!$(this.el).parents(".details-pane").length) {
          var b = $(this.el),
              c = this,
@@ -36,9 +35,9 @@ App.Views.QuestionItem = Backbone.View.extend({
 			   b.siblings().removeClass("opened");
 			   b.toggleClass("opened", !b.hasClass("opened"));
 				 if(b.hasClass("opened")){
-					 (App.Widgets.Dashboard && $(App.Widgets.Dashboard.el).hide(), App.Widgets.Details = new App.Views.Details, $(".details-pane-shell").append(App.Widgets.Details.render().el), App.Widgets.Details.open());
+
+					 (App.Widgets.Dashboard && $(App.Widgets.Dashboard.el).hide(),App.Widgets.Details = new App.Views.Details,$(".details-pane-shell").append(App.Widgets.Details.render().el), App.Widgets.Details.open());
 						$.ajax(mURL("/questions/" + f) + "?auth_token=" + TK).success(function (a) {
-								
 								var answers = a.answers;a.answers = null;
 								App.Widgets.Details.options.question_detail = new App.Models.Question(a,{id: f});
 								App.Widgets.Details.options.answers = new App.Collections.Answers(answers,{id: f});

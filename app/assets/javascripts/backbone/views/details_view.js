@@ -5,13 +5,12 @@ App.Views.Details = Backbone.View.extend({
        "click .close": "close"
   },
   initialize: function () {
-      _.bindAll(this, "render", "open", "close", "loadQuestionDetail", "test")
+      _.bindAll(this, "render", "open", "close", "loadQuestionDetail", "loadAnswers")
   },
   render: function () {
       $(this.el).html(this.template);
       return this
   },
-	test: function(){alert(123)},
 	loadQuestionDetail: function () {
 		if (!this.$(".question-item").length) {
         var a = new App.Views.QuestionItem({
@@ -19,7 +18,12 @@ App.Views.Details = Backbone.View.extend({
             model: this.options.question_detail
         });
     }
+		this.loadAnswers();
     this.$(".pane-components").prepend(a.render().el)		
+	},
+	loadAnswers: function(){
+		var a = new App.Views.Answers({collection: this.options.answers});
+		this.$(".pane-components").append(a.render().el)
 	},
   open: function () {
       $(".main-content .opened");

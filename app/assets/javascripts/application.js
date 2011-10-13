@@ -5,7 +5,7 @@
 // the compiled file.
 //
 //= require jquery
-//= require jquery_ujs
+//= require wysihat
 //= require underscore
 //= require mustache
 //= require cache-provider
